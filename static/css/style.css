@@ -1,12 +1,60 @@
-body {
-    font-family: Arial, sans-serif;
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
 }
 
-input[type=text], input[type=password] {
-    display: block;
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-input {
+    background-color: #1e1e1e;
+    border: none;
+    padding: 15px 20px;
     margin: 10px 0;
+    color: white;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.form-input:focus {
+    outline: none;
+    border: 1px solid #bb86fc;
 }
 
 button {
-    padding: 10px 20px;
+    background-color: #bb86fc;
+    color: #121212;
+    border: none;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #9a67ea;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
