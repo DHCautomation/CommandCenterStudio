@@ -8,11 +8,9 @@ body, html {
 
 .container {
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .form-input {
@@ -22,7 +20,8 @@ body, html {
     margin: 10px 0;
     color: white;
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .form-input:focus {
@@ -30,7 +29,7 @@ body, html {
     border: 1px solid #bb86fc;
 }
 
-button {
+.btn {
     background-color: #bb86fc;
     color: #121212;
     border: none;
@@ -40,10 +39,21 @@ button {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
 }
 
-button:hover {
+.btn:hover {
     background-color: #9a67ea;
+}
+
+.btn-secondary {
+    background-color: #03dac6;
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background-color: #018786;
 }
 
 h1 {
@@ -57,4 +67,60 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+main {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .form-input, .btn {
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .btn {
+        margin-top: 10px;
+    }
 }

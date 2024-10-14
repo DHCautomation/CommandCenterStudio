@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page - Command Center Studio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
         <nav>
             <h1>Command Center Studio</h1>
-            <a href="/logout">Logout</a>
+            <span>Welcome, {{ current_user.username }}!</span>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a>
         </nav>
-        <!-- Content of the main page goes here -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <main>
+            <h2>Dashboard</h2>
+            <!-- Add your main content here -->
+            <p>This is the main page of Command Center Studio. You can add your application's features and content here.</p>
+        </main>
     </div>
 </body>
 </html>
